@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Electronics Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <h1 class="brand">Neon Electronics</h1>
+            <nav>
+                <ul class="nav">
+                    <li><a href="#products">Termékek</a></li>
+                    <li><a href="cart.html">Kosár (<span id="cart-count">0</span>)</a></li>
+                    <li><a href="cart.html" id="goto-checkout">Fizetés</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="hero" class="hero">
+            <h2>Válogass a legjobb elektronikai termékekből</h2>
+            <p class="lead">Gyors szállítás · Biztonságos fizetés · 14 nap cseregarancia</p>
+        </section>
+
+        <section id="products" class="products-section">
+            <h2>Elérhető termékek</h2>
+            <div id="product-list" class="product-grid" aria-live="polite"></div>
+        </section>
+
+        <aside id="cart" class="cart">
+            <h2>Kosár</h2>
+            <div id="cart-items" class="cart-items">A kosár üres.</div>
+            <div class="cart-footer">
+                <div class="total">Összesen: <span id="cart-total">0 Ft</span></div>
+                <button id="checkout-button" class="btn primary">Megnyitás kosár</button>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; Neon Electronics • Minden jog fenntartva</p>
+        </div>
+    </footer>
+
+    <!-- Fizetés modal -->
+    <div id="payment-modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-content">
+            <button id="close-modal" class="modal-close">&times;</button>
+            <h3>Fizetés (szimuláció)</h3>
+            <form id="payment-form">
+                <div class="form-row">
+                    <label for="name">Név</label>
+                    <input id="name" name="name" required />
+                </div>
+                <div class="form-row">
+                    <label for="email">E-mail</label>
+                    <input id="email" name="email" type="email" required />
+                </div>
+                <div class="form-row">
+                    <label for="card">Kártyaszám</label>
+                    <input id="card" name="card" inputmode="numeric" maxlength="19" autocomplete="cc-number" placeholder="4242 4242 4242 4242" required />
+                </div>
+                <div class="form-row group">
+                    <div>
+                        <label for="exp">Lejárat</label>
+                        <input id="exp" name="exp" inputmode="numeric" maxlength="5" placeholder="MM/YY" autocomplete="cc-exp" required />
+                    </div>
+                    <div>
+                        <label for="cvc">CVC</label>
+                        <input id="cvc" name="cvc" inputmode="numeric" minlength="2" maxlength="3" pattern="\\d{3}" autocomplete="cc-csc" required />
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn primary">Fizetés</button>
+                    <button type="button" id="cancel-payment" class="btn">Mégse</button>
+                </div>
+                <div id="payment-status" class="payment-status" aria-live="polite"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- részletes termék modal -->
+    <div id="product-modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-content product-modal-content">
+        <button id="close-product-modal" class="modal-close" aria-label="Bezár">&times;</button>
+
+        <div class="product-detail-grid">
+          <div class="detail-media">
+            <img id="modal-img" src="" alt="">
+          </div>
+          <div class="detail-body">
+            <h3 id="modal-title"></h3>
+            <div class="detail-price" id="modal-price"></div>
+            <p id="modal-desc" class="product-desc"></p>
+
+            <div class="variant-row">
+              <div class="variant-label">Szín:</div>
+              <div id="color-swatches" class="swatches"></div>
+            </div>
+
+            <div class="specs" id="modal-specs"></div>
+
+            <div class="controls" style="margin-top:12px">
+              <input id="modal-qty" class="qty" type="number" min="1" value="1">
+              <button id="modal-add" class="btn primary">Kosárba</button>
+              <button id="modal-buy" class="btn">Megvásárolom</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

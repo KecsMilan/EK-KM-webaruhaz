@@ -1,0 +1,14 @@
+{
+  "name": "electronics-store",
+  "version": "1.0.0",
+  "description": "An online electronics store for ordering products.",
+  "main": "src/js/script.js",
+  "scripts": {
+    "start": "live-server src"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

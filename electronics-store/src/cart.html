@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kosár - Neon Electronics</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Neon Electronics</h1>
+      <nav>
+        <ul class="nav">
+          <li><a href="index.html">Vissza a boltba</a></li>
+          <li><a href="cart.html">Kosár (<span id="cart-count">0</span>)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="cart-page">
+      <h2>Az Ön kosara</h2>
+      <div id="cart-list" class="product-grid" aria-live="polite">
+        <!-- kosár tételek ide töltődnek -->
+      </div>
+
+      <div class="cart-summary" style="margin-top:16px;display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-weight:700">Összesen: <span id="cart-total">0 Ft</span></div>
+        <div>
+          <button id="page-clear-cart" class="btn">Kosár ürítése</button>
+          <button id="page-checkout-button" class="btn primary">Fizetés</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; Neon Electronics • Minden jog fenntartva</p>
+    </div>
+  </footer>
+
+  <!-- Fizetés modal (ugyanaz, mint az indexen) -->
+  <div id="payment-modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button id="close-modal" class="modal-close">&times;</button>
+      <h3>Fizetés</h3>
+      <form id="payment-form">
+        <div class="form-row">
+          <label for="name">Név</label>
+          <input id="name" name="name" required />
+        </div>
+        <div class="form-row">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+        <div class="form-row">
+          <label for="card">Kártyaszám</label>
+          <input id="card" name="card" inputmode="numeric" maxlength="19" autocomplete="cc-number" placeholder="4242 4242 4242 4242" required />
+        </div>
+        <div class="form-row group">
+          <div>
+            <label for="exp">Lejárat</label>
+            <input id="exp" name="exp" inputmode="numeric" maxlength="5" placeholder="MM/YY" autocomplete="cc-exp" required />
+          </div>
+          <div>
+            <label for="cvc">CVC</label>
+            <input id="cvc" name="cvc" inputmode="numeric" minlength="3" maxlength="3" autocomplete="cc-csc" required />
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Fizetés</button>
+          <button type="button" id="cancel-payment" class="btn">Mégse</button>
+        </div>
+        <div id="payment-status" class="payment-status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- jsPDF (PDF generáláshoz) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>

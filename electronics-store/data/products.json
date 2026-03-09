@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Smartphone",
+      "price": 699.99,
+      "description": "Latest model smartphone with high-resolution camera and fast processor.",
+      "image": "images/smartphone.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Laptop",
+      "price": 999.99,
+      "description": "Powerful laptop suitable for gaming and professional work.",
+      "image": "images/laptop.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Wireless Headphones",
+      "price": 199.99,
+      "description": "Noise-cancelling wireless headphones with long battery life.",
+      "image": "images/headphones.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Smartwatch",
+      "price": 249.99,
+      "description": "Stylish smartwatch with fitness tracking and notification features.",
+      "image": "images/smartwatch.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Bluetooth Speaker",
+      "price": 89.99,
+      "description": "Portable Bluetooth speaker with excellent sound quality.",
+      "image": "images/speaker.jpg"
+    }
+  ]
+}
