@@ -10,6 +10,7 @@ namespace EK_KM_webaruhaz_API.Mappers
         {
             return new Termek
             {
+                tipus = termekModel.tipus,
                 gyarto = termekModel.gyarto,
                 termek_neve = termekModel.termek_neve,
                 termek_ara = termekModel.termek_ara,
@@ -17,6 +18,7 @@ namespace EK_KM_webaruhaz_API.Mappers
                 tech_adat_1 = termekModel.tech_adat_1,
                 tech_adat_2 = termekModel.tech_adat_2,
                 tech_adat_3 = termekModel.tech_adat_3,
+                mennyiseg = termekModel.mennyiseg,
             };
                 
         }

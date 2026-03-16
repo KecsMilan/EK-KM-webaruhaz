@@ -25,6 +25,14 @@ namespace EK_KM_webaruhaz_API.Controllers
 
             return Ok();
         }
+
+        [HttpGet]
+        public async Task<ActionResult> GetTermekek() 
+        {
+            var termekek = _dbContext.Termekek.ToList();
+
+            return Ok(termekek);
+        }
     }
 
 

@@ -1,0 +1,82 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "EK-KM-webaruhaz_API",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/termek": {
+      "post": {
+        "tags": [
+          "Termek"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTermekDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTermekDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTermekDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CreateTermekDto": {
+        "type": "object",
+        "properties": {
+          "tipus": {
+            "type": "string",
+            "nullable": true
+          },
+          "gyarto": {
+            "type": "string",
+            "nullable": true
+          },
+          "termek_neve": {
+            "type": "string",
+            "nullable": true
+          },
+          "termek_ara": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "termek_leirasa": {
+            "type": "string",
+            "nullable": true
+          },
+          "tech_adat_1": {
+            "type": "string",
+            "nullable": true
+          },
+          "tech_adat_2": {
+            "type": "string",
+            "nullable": true
+          },
+          "tech_adat_3": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

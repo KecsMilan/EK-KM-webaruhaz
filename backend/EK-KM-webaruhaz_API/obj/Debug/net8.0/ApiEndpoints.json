@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "EK_KM_webaruhaz_API.Controllers.TermekController",
+    "Method": "PostTermek",
+    "RelativePath": "api/termek",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "termekdto",
+        "Type": "EK_KM_webaruhaz_API.Dtos.CreateTermekDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

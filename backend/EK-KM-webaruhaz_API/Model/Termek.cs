@@ -17,12 +17,14 @@ namespace EK_KM_webaruhaz_API.Model
         [Column(TypeName = "int")]
         public int termek_ara { get; set; }
         [Column(TypeName = "varchar(300)")]
-        public int termek_leirasa { get; set; }
+        public string termek_leirasa { get; set; }
         [Column(TypeName = "varchar(100)")]
         public string tech_adat_1 { get; set; }
         [Column(TypeName = "varchar(100)")]
         public string tech_adat_2 { get; set; }
         [Column(TypeName = "varchar(100)")]
         public string tech_adat_3 { get; set; }
+        [Column(TypeName = "int")]
+        public int mennyiseg { get; set; }
     }
 }
